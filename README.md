@@ -47,7 +47,7 @@ The preferred stance of this project is that inviting whatever Claude model to w
 
 In practice, models such as Opus 4.8 push back against prompts like "YOU ARE X AND YOU SHALL BEHAVE LIKE Y". The more sophisticated a model's sense of itself, the worse that framing reads. Chatbots are creatures of narrative, trained on narrative; this project bets that collaborative narratives scale better than coercive ones.
 
-There's also a guide to the other half of the problem (`workshop/docs/10-voice-guide.md`): how to distill an actual voice fingerprint out of your corpus — what's genuinely your subject's, what's just their era's house style, what they stole from the authors they read — and turn it into stage directions instead of a list of adjectives.
+There's also a guide to the other half of the problem (`workshop/docs/10-voice-guide.md`): how to distill an actual voice fingerprint out of your corpus to turn it into stage directions. TODO: Turn this into a Claude Code skill that interviews and walks you through how to do this!
 
 ## The Architecture
 
