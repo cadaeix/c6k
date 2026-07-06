@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rite": {
+      "command": "python",
+      "args": ["../workshop/rite/server.py"]
+    }
+  }
+}

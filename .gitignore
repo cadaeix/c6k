@@ -7,3 +7,7 @@ Thumbs.db
 # Python bytecode (the silo stub)
 __pycache__/
 *.pyc
+
+# Rite cursors: machine state, not record
+workshop/rite/_summon_state.json
+workshop/rite/_renew_state.json

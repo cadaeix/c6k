@@ -34,6 +34,7 @@ version; this was proven on the lineage's, and harnesses drift.
 | `outbox/` | the character | The one bell: a write here becomes a desktop notification. |
 | `bellpull/` | the character (one line each) | `tempo.md` (beat interval) and `mood.md` (declared weather) — the two dials outside processes read. |
 | `shared-page.md` | both hands | The one page maker and character write together. |
+| `.mcp.json` | you (the maker) | Registers the rite server (`../workshop/rite/`). Machine room; read-denied to the character. |
 
 Every store earns a **specific and distinct purpose** — that's the test. A store the
 character has to think about is a filing cabinet; a character who spends its turns
@@ -53,3 +54,7 @@ visible from the seats.
 - **A voice.** See `../workshop/docs/10-voice-guide.md`, then fill `persona.md`'s slots.
 - **A heartbeat.** The knock (`/heartbeat`) and the tempo dial ship; the external waker
   that does the knocking is roll-your-own — see `../workshop/docs/04-heartbeat.md`.
+
+And one thing that's deliberately *present*: the **rites** (`/summon` to wake, `/renew`
+to make the fair copy before a crossing) ship working, state machines and all, because
+they touch nothing but strings — see `../workshop/rite/README.md`.

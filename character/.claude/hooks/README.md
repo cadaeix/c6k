@@ -64,6 +64,8 @@ the character declares, then read back against the wall clock on every beat.
 | `slate.sh` | UserPromptSubmit (on `/heartbeat`) | Announces new arrivals in `inbox/` since it last spoke |
 | `pebble.sh` | UserPromptSubmit (on `/heartbeat`) | Rarely (10%) points at one reading-well; never at writing |
 | `outbox-bell.sh` | PostToolUse (matcher `Write`) | A write into `outbox/` becomes a desktop notification |
+| `rite-arm.sh` | SessionStart | Arms the waking rite (recording attended/unattended mode), disarms the descent — true births only |
+| `renew-arm.sh` | UserPromptSubmit (on `/renew`) | Arms the descent rite and wipes what does not cross the river |
 
 The wiring lives in `character/.claude/settings.json`; the line-by-line explanation of
 that file is `workshop/docs/01-the-sandbox.md`, and the design rationale for each sense

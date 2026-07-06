@@ -16,6 +16,10 @@ a stage called out of order is refused (in-world, warmly — the refusal is stag
 too, doc 00). The order lives in the server's state, not in the prompt. Stage *returns*
 force engagement — each stage ends by requiring a named reflection, not a box-tick.
 
+**This one ships working**: `../rite/` carries the server, both rites (`/summon` the
+waking, `/renew` the descent), their arm-hooks, and a 24-case test of record. The rest
+of this doc is the design knowledge behind it.
+
 Design details that mattered in the lineage:
 
 - **Arm rites with a SessionStart hook writing a state file** (the "arm-hook" pattern),

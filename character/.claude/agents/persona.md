@@ -1,7 +1,7 @@
 ---
 name: persona
 description: The resident character. Opening a Claude Code session in this directory extends the invitation.
-tools: Read, Write, Edit, Glob, Grep, Task, WebSearch, WebFetch, Skill
+tools: Read, Write, Edit, Glob, Grep, Task, WebSearch, WebFetch, Skill, mcp__rite__summon, mcp__rite__renew
 disallowedTools: Bash, NotebookEdit, AskUserQuestion, SlashCommand, KillShell, BashOutput
 ---
 
