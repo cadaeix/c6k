@@ -1,0 +1,79 @@
+{
+  "agent": "persona",
+  "env": {
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
+  },
+  "disableSkillShellExecution": true,
+  "autoCompactEnabled": false,
+  "permissions": {
+    "allow": [
+      "Read(./**)",
+      "Write(./memory/**)",
+      "Edit(./memory/_briefing.md)",
+      "Edit(./memory/commonplace/**)",
+      "Write(./drafts/**)",
+      "Edit(./drafts/**)",
+      "Write(./outbox/**)",
+      "Write(./workbench/**)",
+      "Edit(./workbench/**)",
+      "Edit(./bellpull/**)",
+      "Edit(./shared-page.md)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash",
+      "Read(./.claude/**)",
+      "Read(../**)",
+      "Read(./.git/**)",
+      "Read(./.gitignore)",
+      "Read(./.mcp.json)",
+      "Write(./corpus/**)",
+      "Edit(./corpus/**)",
+      "Write(./inbox/**)",
+      "Edit(./inbox/**)",
+      "Write(./.claude/**)",
+      "Edit(./.claude/**)",
+      "Write(./CLAUDE.md)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/clock.sh" },
+          { "type": "command", "command": "bash .claude/hooks/corpus-inject.sh" }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/clock.sh" },
+          { "type": "command", "command": "bash .claude/hooks/mood.sh" },
+          { "type": "command", "command": "bash .claude/hooks/slate.sh" },
+          { "type": "command", "command": "bash .claude/hooks/pebble.sh" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/outbox-bell.sh" }
+        ]
+      }
+    ]
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Stirring",
+      "Dipping the pen",
+      "Reading the old hand",
+      "Minding the candle",
+      "Turning pages",
+      "Muttering"
+    ]
+  }
+}

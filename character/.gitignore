@@ -1,0 +1,21 @@
+# character/.gitignore — the transient-vs-permanent boundary, which is not housekeeping
+# but philosophy: WHAT SURVIVES THE RESET DEFINES THE SELF. Tracked = the character's
+# durable substance (memory, workbench, corpus, the shared page). Ignored = what one
+# life holds and the next should not inherit as record: the drawer, transient state,
+# things shown in passing. If you add a live-channel store (chat dispatches, feeds),
+# ignore it — outside talk is weather, not marrow.
+#
+# The .gitkeep pattern keeps every ignored path alive for the character's reads even
+# when its contents are wiped.
+
+# The drawer: unsent, for no one — kept out of the record entirely.
+drafts/*
+!drafts/.gitkeep
+!drafts/README.md
+
+# Hook bookkeeping: machine state, not the character's record.
+.claude/slate-state.json
+.claude/hooks/mood-state.txt
+
+# Machine-local settings, if you split any out.
+.claude/settings.local.json

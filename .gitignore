@@ -4,3 +4,6 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+# Python bytecode (the silo stub)
+__pycache__/
+*.pyc
