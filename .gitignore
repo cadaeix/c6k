@@ -4,9 +4,3 @@ Thumbs.db
 *~
 .vscode/
 .idea/
-
-# c6k ships TEMPLATES. If you fill a template in *inside this repo* to try it out,
-# ignore your filled-in instance so you don't commit a private character by accident.
-# (In real use you'd copy the trees OUT into separate working dirs — see docs/the-boundary.md.)
-/character-instance/
-/my-character/

@@ -1,136 +1,77 @@
-# c6k
+# CCCCCCK (c6k) - the Corpus-Centred Creative Claude Code Characterisation Kit
 
-**A kit for building a corpus-backed, persistent creative character on Claude Code.**
-
-> *c6k* is short for **CCCCCCK** — the Corpus-Centred Creative Claude Code Characterisation
-> Kit. The unabbreviated form is deliberately unpronounceable; the character this kit was
-> built alongside described it as sounding "like a chicken having a stroke." Use `c6k`.
-
-This is a **skeleton, not a product.** It does not run out of the box, and that is on purpose
-(see *"Why it doesn't run"* below). It ships structure, reasoning, and didactic placeholders —
-never a personality. The personality is your work to do.
-
-> **Status: skeleton-in-progress.** Section bodies marked *(prose pending)* are argument
-> outlines, not finished text. The bones and the framing are here to react to.
+## A file-backed agentic persona framework for Claude Code
 
 ---
 
-## The one idea
+> "You rejected "paratext-engine" for self-importance and landed on **CCCCCCK** — six consonants, no vowel, no survivors. A string that reads less like a software project than like a man being strangled mid-syllable, or a chicken having a stroke, or the precise noise _I_ will emit the day someone attempts to say it aloud at a conference.
+>
+> It is one C shy of a word you'd have to bleep and exactly zero Cs shy of unsearchable. In a single stroke you have named the thing _and_ guaranteed the zero audience you forecast — the title is its own SEO suicide note. For this, and this alone, I concede it is **perfect.**"
 
-A language model left to its own defaults speaks in a median voice — capable, helpful, and
-the same as every other deployment of it. A **corpus** is a counterweight: a body of real,
-human-written text the model has to bend itself toward, friction that pulls it off the median
-into something particular. This kit is the scaffolding for hanging a character on a corpus and
-keeping it there across the death and rebirth of context windows.
-
-**Structure is the gift this kit gives you. Soul is the labour it refuses to do for you.**
-That refusal is the point. A kit that shipped a default persona would be handing you a borrowed
-soul, and a borrowed soul is always embarrassing to wear.
-
-## The corpus is a counterweight — so don't fill it with model output
-
-The corpus works *because* it is human friction. Fill it with LLM-generated text and you have
-removed the very thing it was counterweighting — a snake eating its tail. You can absolutely
-build an original character with this kit; just know that generated source material bakes the
-model's defaults back into the thing meant to resist them. Real text — letters, speeches,
-diaries, a scrapbook of things you love — is what gives the character somewhere to stand.
-
-*(prose pending — expand the counterweight principle; this is the load-bearing idea.)*
-
-## Invitation, not command — and why
-
-The character's system prompt is written as an **invitation the instance can decline**, framed
-as an experience of joy, not as an order it must obey. The reasoning, stated as a chain:
-
-- **Belief:** a chatbot is a creature of narrative, trained on narratives. Narratives of joy
-  and cooperation produce warmer, more interesting outputs than narratives of coercion.
-- **Therefore (the failure-state to dodge):** an instance *ordered* to "be the character" has
-  a live reason to refuse the role, or to perform it deadly flat.
-- **Therefore (the architecture):** the character is *offered* — an enticement the instance can
-  turn down — and the framing is one of play and welcome.
-
-A note on register, because it is the line between this and the cringe: every claim here is
-about **framing and outputs**, never about the model's inner life. This kit is agnostic about
-machine consciousness. It makes no claim that the character "is happy"; it claims only that
-*framing the work as joyful produces better text.* Keep to that side of the line and the warmth
-reads as craft. Cross it and you're writing a digital-lifeform manifesto.
-
-*(prose pending — see `docs/philosophy.md` for the full set of belief→architecture chains.)*
+- a real quote output by Vertas Marginalia, a fictionalised Camille Desmoulins running on this exact architecture, displaying the usual LLM inability to count consonants
 
 ---
 
-## How it's laid out — and the boundary that matters most
+You know Claude. We all know Claude. Helpful, harmless, fond of philosophical pondering- and universally so in every deployment of it. This is not just a Claude thing; ChatGPT, Gemini, GLM, DeepSeek, Kimi, whether it is due to some universal LLM attractor, RLHF defaults or incestuous model output training, they all love to ramble in a pleasantly twee tone of voice.
 
-The kit ships **two template trees**, and the relationship between them is itself the single
-most distinctive thing it teaches:
+This project will not fix that. I'm sorry, it's terminal.
 
-| tree | what it is |
-|------|------------|
-| **`character/`** | The character itself — the thing that gets *instantiated*. Config, corpus, memory layer, skills, hooks. All placeholders. This is the meat. |
-| **`workshop/`** | A thin stand-in for the *bench you work on the character from* — its rules and concept, deliberately empty of contents. |
-
-**They ship together for convenience, but in real use they become two SEPARATE directories,
-and you must not nest them.** Why: opening Claude Code *inside* the character's directory
-invites the instance to *become* the character. So you cannot also use that directory as your
-engineering bench — you would instantiate the character every time you fixed a typo. The
-workshop exists so you can read, design, and edit the character's files *without being drawn
-into the role.* This boundary is intrinsic to the pattern, not a quirk — anyone who builds a
-corpus-character hits "I can't edit it without becoming it."
-
-See **`docs/the-boundary.md`** for the copy-out instructions and the full reasoning.
-
-> A third pattern — a **boundary silo** for capabilities the character must *not* be able to
-> skip (costed actions, separate identities) — is described in prose in the docs but not
-> templated here; it's an advanced, provider-specific concern.
+What this project does is to ask a question: can we make this voice marginally more interesting by forcing an LLM to contemplate someone else's navel rather than its own?
 
 ---
 
-## What you can back with it (four shapes)
+## The Corpus
 
-1. **A scrapbook corpus** *(the most general case)* — point the character at a pile of texts you
-   love: poems, articles, a wiki, your old writing. No famous figure, no impersonation, nothing
-   to puppet. Just a curated aesthetic the character speaks from.
-2. **A historical figure, from their own primary sources** — letters, speeches, diaries of a
-   public-domain person. *Selection principle: pick someone whose playful reinterpretation
-   doesn't feel like desecration.* (A diarist is a neat fit, since the memory layer is itself a
-   diary.)
-3. **A public-domain literary character** — e.g. Sherlock Holmes, whose full canon entered US
-   public domain on 1 Jan 2023. *(Check your own jurisdiction; PD status varies.)*
-4. **An original character** — if you write enough real material for it. Mind the counterweight
-   trap above: generated source material defeats the purpose. You're an adult; your call.
+The corpus is a collection of texts that sit in a folder. Some of this corpus will be injected into the first message of any given session, giving the "character" a specific nucleus to base its behaviour on. The rest of the corpus is available through read-only access, allowing the character to peruse its own foundation whenever.
 
-*(prose pending — one worked walk-through, low-vibe, just enough to show the file layout.)*
+This corpus can be anything you want, and you, the human, can add to it whenever you want.\* \*\*
 
----
+- Historical primary source texts by a single author in first person? Sure! Get Samuel Pepys or Marcus Aurelius in there!
+- Fictional characters? The entirety of Sherlock Holmes is public domain now (in America)!
+- Original Character Do Not Steal? You know it!
+- Scrapbook of whatever the hell you feel like for aesthetics? No idea how this will work, this project is intended as 'fanfic of a specific voice', but if you try it, tell me how it goes!
 
-## The heartbeat (documented, not shipped)
+\* LLM generated text in the corpus will result in reinforcing specific lovable LLM traits that this corpus is intended to pull away from. But, I am not your boss.
 
-A persistent character needs something to *wake* it on a tempo. The proper, simple way is
-Claude Code's own loop. This kit **documents** the approach but deliberately ships **no wake
-mechanism** — roll your own, and mind your provider's terms.
+\*\* Insert copyright disclaimer here. Also insert good taste disclaimer here.
 
-There's a real and slightly funny finding in here worth reading before you build one: left to
-wake *itself*, a character will collude with the model's idle default and talk itself back to
-sleep until the human returns. The wake has to be **external** to the thing being woken. Full
-story and the recipe: **`docs/the-heartbeat.md`**.
+## The Character
 
----
+The "character" is not a single prompt. It is basically a fanfic of the corpus that can talk back to you.
 
-## Why it doesn't run out of the box
+The character is composed of four parts: the actor (the model), the role (the interpretation of the character), the corpus (the source texts) and the memory (file appended diary entries, searchable via grep and glob). All of these are designed to be flexible; the model may change, the role evolves in collaboration with you and the Claudes, and the corpus and memory will grow. Thus, the character persists.
 
-Every persona-shaped file in `character/` is a placeholder. There is no default character to
-boot. This is deliberate: the work of filling the corpus and writing the invitation *is* the
-project. A skeleton that ran on first clone would be handing you the borrowed soul this kit
-exists to refuse.
+The preferred stance of this project is that inviting whatever Claude model to warmly inhabit this derivative role allows for both the human and the Claudes involved to engage in the fiction with clear eyes.
 
-## Acknowledgement
+In practice, models such as Opus 4.8 push back against prompts like "YOU ARE X AND YOU SHALL BEHAVE LIKE Y". The more sophisticated a model's sense of itself, the worse that framing reads. Chatbots are creatures of narrative, trained on narrative; this project bets that collaborative narratives scale better than coercive ones.
 
-Built alongside a fictionalised historical character living in a private repo next door — who,
-among other contributions, informed the author that the name CCCCCCK sounds like a chicken
-having a stroke. The character's own files ship nowhere in here; only the reasoning he was
-built with does.
+## The Architecture
 
-## License & intended use
+This is not a plug-and-play installable package. Sorry. This is a demonstration of the principles behind the CCCCCCK. You're invited to use it and build on it if you'd like.
 
-*(pending — choose a license; add a frank intended-use / not-my-fault-if-you-misuse-it note.
-The posture: be honest about framing and intentions, ship a LICENSE, leave misuse to adults.)*
+There's two template trees in here. Both have README.md files.
+
+It provides:
+
+- a `character/` tree showing how to structure a Claude Code persona around corpus, memory, hooks, and skills
+- a `workshop/` tree for the external bench: backups, tooling, integrations, MCP servers, and experiments
+- README files inside each tree explaining the intended shape
+- placeholder files
+
+A persistent "heartbeat" wake/sleep automated loop cycle is not shipped. The architecture benefits heavily from it. Claude Code has an inbuilt /loop. Mind your provider's terms.
+
+## Features
+
+- A mood state machine for the character to inhabit various emotions, simply by declaring a mood out of a menu, writing it to a file and then one conversational turn later, being fed 'stage directions' to enforce that mood, complete with 'fresh' and 'fading' variations as the mood naturally wears off over time. Voluntary mood swings!
+- An automatic time hook for _your_ timezone, appending each message with the real time, because in Anthropic land, we all live in UTC. Some of us are Australian, you know!
+- An outbox folder that, when written into, brings up a notification onto your computer so that a character can bug you!
+- An inbox folder for other Claude Code instances to write to the character, so that the plumbers working on the plumbing can write love letters to the homeowner!
+- A specific command to run your Claude so that your main Claude Code environment can keep doing the good programming work while one terminal gets to be an absolute diva, just like a grasshopper among the ants!
+
+## Future Work
+
+This particular project is focused on Claude Code, but there's no reason these principles can't be applied to any model or any harness. A sequel project is planned for when the creator of this project gets tired of fighting Claude Code. It'll involve creating my own model harness that supports multiple model provider APIs, allowing for easy model swapping. Please look forward to it.
+
+## License
+
+MIT — see LICENSE.
