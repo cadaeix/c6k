@@ -35,7 +35,7 @@ There's a guide to sourcing and structuring a corpus (`workshop/docs/09-corpus-g
 
 \* LLM generated text in the corpus will result in reinforcing specific lovable LLM traits that this corpus is intended to pull away from. But, I am not your boss.
 
-\*\* Insert copyright disclaimer here. Also insert good taste disclaimer here.
+\*\* As a FOSS/fanfic enthusiast, I will not lecture you about copyright or what you can do on your private machine. I'd like to also ask you to think about your choice of character referent and to keep good taste in mind. Please.
 
 ## The Character
 
